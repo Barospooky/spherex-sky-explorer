@@ -1,0 +1,19 @@
+﻿@import "tailwindcss";
+:root { color-scheme: dark; }
+body { margin: 0; background: #0c1421; color: #e5edf6; font-family: Arial, Helvetica, sans-serif; }
+.panel { border: 1px solid #263346; border-radius: 12px; background: #111c2b; }
+.eyebrow { color: #7dbacb; font-size: 10px; font-weight: 600; letter-spacing: .16em; }
+label { display: block; font-size: 12px; color: #cbd5e1; }
+input:not([type=range]), select { margin-top: 8px; width: 100%; min-height: 42px; border: 1px solid #35445a; border-radius: 6px; background: #0b1422; padding: 10px 12px; font-size: 13px; }
+input::placeholder { color: #7d8da3; }
+button { cursor: pointer; font-size: 12px; font-weight: 600; transition: background-color .15s; }
+.primary { border-radius: 6px; background: #80c5d4; color: #0b1925; padding: 12px 16px; }
+.primary:hover { background: #a1d9e4; }
+.secondary { border: 1px solid #3b4b61; border-radius: 6px; padding: 9px 12px; color: #cfdae8; background: #182536; }
+.secondary:hover:enabled { background: #26384d; }
+button:disabled, select:disabled { cursor: not-allowed; color: #8290a3; background: #141f2e; }
+.timeline { width: 100%; accent-color: #80c5d4; }
+:focus-visible { outline: 2px solid #8bd7e6; outline-offset: 4px; }
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 50; padding: 12px; background: #e5edf6; color: #0c1421; }
+.skip-link:focus { top: 12px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
