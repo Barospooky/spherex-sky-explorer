@@ -1,8 +1,8 @@
-ï»¿# SPHEREx Sky Explorer â€” practice starter
+# SPHEREx Sky Explorer — practice starter
 
 Next.js App Router, TypeScript, Tailwind CSS and FastAPI. NASA Space Apps Challenge 2026 preparation; not an official submission.
 
-## Start backend â€” PowerShell terminal 1
+## Start backend — PowerShell terminal 1
 ```powershell
 Set-Location D:\NASA_SPACE_APPS\spherex-sky-explorer\backend
 # Only if the environment is missing:
@@ -14,7 +14,7 @@ py -3.13 -m venv .venv
 Health: http://127.0.0.1:8000/api/health
 API documentation: http://127.0.0.1:8000/docs
 
-## Start frontend â€” PowerShell terminal 2
+## Start frontend — PowerShell terminal 2
 ```powershell
 Set-Location D:\NASA_SPACE_APPS\spherex-sky-explorer\frontend
 if (!(Test-Path .env.local)) { Copy-Item .env.local.example .env.local }
@@ -54,3 +54,16 @@ SQLite metadata: backend/data/observations.sqlite3. FITS and PNG cache: backend/
 Candidate pairs use the same detector, overlapping spectral bounds, and more than one day separation. These do not establish matching wavelengths at the target pixel. Previews use recognized science extensions with finite pixels, a vertical flip and independent percentile/asinh stretches. They are not WCS-registered, photometric measurements, or evidence of object motion. Use side-by-side inspection only.
 
 Official interface: https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-access/
+
+
+## Sky Discovery Lab update
+The primary interface is now a unified light-themed search/viewer. Native inspection is distinct from Align & compare epochs. Planet X Lab provides temporary user notes and JSON export with observation provenance; it does not detect or confirm planets.
+
+GET /api/comparison?first=ID&second=ID&ra=RA&dec=DEC loads two small cutouts and maps them onto a common ICRS TAN grid (32 x 32, three arcminutes). Celestial SIP corrections are retained; spectral lookup uses raw pixel coordinates. Nearest-neighbor resampling avoids implying new resolution. Quality flags other than SOURCE and FULLSAMPLE are excluded conservatively. Only common finite pixels with local wavelength centers within half the narrower bandwidth are shown. At least 16 shared pixels are required. Both frames use a common percentile/asinh stretch. These are exploration previews, not PSF-matched or uncertainty-propagated scientific differences.
+
+Transient network errors and HTTP 429/502/503/504 receive up to three attempts with bounded backoff. A persistent upstream failure is still reported; the application never silently substitutes a different observation. The formerly failing 2025W47_2A_0043_1 cutout was successfully retrieved during verification. Cached images avoid repeated archive calls.
+
+
+## Current verification and imagery
+See artifacts/verification.md for exact executed checks, observation IDs and FITS times. The three workspaces share real archive state. Sky Explorer supports a single selected observation independently of pair compatibility. Time Comparison offers a bounded six-cutout/fifteen-pair automatic search, with optional DR1/QR3 deep fields and explicit rejection counts. Metadata timestamps are rendered in UTC.
+Mission illustration attribution and reuse policy are documented in frontend/public/images/CREDITS.md. Planet Nine third-party artwork was omitted because reuse permission was not verified. Desktop/mobile screenshots exist in artifacts; mobile visual validation remains incomplete.

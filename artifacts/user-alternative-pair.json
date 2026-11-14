@@ -1,0 +1,34 @@
+{
+  "comparison": null,
+  "attempts": [
+    {
+      "first": "2025W19_2B_0534_1",
+      "second": "",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W19_2B/l2b-v27-2026-198/6/level2_2025W19_2B_0534_1D6_spx_l2b-v27-2026-198.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2025W20_2D_0042_3",
+      "second": "",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W20_2D/l2b-v27-2026-198/6/level2_2025W20_2D_0042_3D6_spx_l2b-v27-2026-198.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2026W20_2A_0379_2",
+      "second": "",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/qr3/level2/2026W20_2A/l2b-v27-2026-267/6/level2_2026W20_2A_0379_2D6_spx_l2b-v27-2026-267.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2026W24_1A_0025_1",
+      "second": "",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/qr3/level2/2026W24_1A/l2b-v27-2026-271/6/level2_2026W24_1A_0025_1D6_spx_l2b-v27-2026-271.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2025W41_1A_0385_2",
+      "second": "2025W42_2A_0129_3",
+      "reason": "Comparison rejected: Clean overlap: 843/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    }
+  ],
+  "warnings": [
+    "dr1: result limit reached; this is a bounded sample."
+  ],
+  "message": "No compatible pair in the bounded six-observation sample. Try another region or enable deep fields; this is not evidence that no compatible archive data exist."
+}

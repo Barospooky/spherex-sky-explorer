@@ -1,0 +1,63 @@
+{
+  "comparison": null,
+  "attempts": [
+    {
+      "first": "2025W18_2B_0374_3",
+      "second": "",
+      "band": "SPHEREx-D1",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W18_2B/l2b-v27-2026-197/1/level2_2025W18_2B_0374_3D1_spx_l2b-v27-2026-197.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2025W43_2A_0607_3",
+      "second": "",
+      "band": "SPHEREx-D1",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W43_2A/l2b-v27-2026-245/1/level2_2025W43_2A_0607_3D1_spx_l2b-v27-2026-245.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2025W18_1B_0074_2",
+      "second": "2026W24_1A_0511_2",
+      "band": "SPHEREx-D1",
+      "reason": "Comparison rejected: Clean overlap: 829/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W19_1B_0166_1",
+      "second": "",
+      "band": "SPHEREx-D2",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W19_1B/l2b-v27-2026-197/2/level2_2025W19_1B_0166_1D2_spx_l2b-v27-2026-197.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2025W43_2A_0536_1",
+      "second": "",
+      "band": "SPHEREx-D2",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W43_2A/l2b-v27-2026-245/2/level2_2025W43_2A_0536_1D2_spx_l2b-v27-2026-245.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2026W24_2B_0317_1",
+      "second": "",
+      "band": "SPHEREx-D2",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/qr3/level2/2026W24_2B/l2b-v27-2026-272/2/level2_2026W24_2B_0317_1D2_spx_l2b-v27-2026-272.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2025W20_2D_0554_4",
+      "second": "",
+      "band": "SPHEREx-D3",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W20_2D/l2b-v27-2026-198/3/level2_2025W20_2D_0554_4D3_spx_l2b-v27-2026-198.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2026W24_1A_0025_1",
+      "second": "",
+      "band": "SPHEREx-D3",
+      "reason": "Cutout unavailable: HTTPStatusError: Server error '503 Service Unavailable' for url 'https://irsa.ipac.caltech.edu/ibe/data/spherex/qr3/level2/2026W24_1A/l2b-v27-2026-271/3/level2_2026W24_1A_0025_1D3_spx_l2b-v27-2026-271.fits?center=304.693508808%2C42.4436872991&size=0.05'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+      "first": "2025W19_2B_0534_1",
+      "second": "2025W42_2A_0260_3",
+      "band": "SPHEREx-D3",
+      "reason": "Comparison rejected: Clean overlap: 773/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    }
+  ],
+  "warnings": [
+    "dr1: result limit reached; this is a bounded sample."
+  ],
+  "message": "No pair passed in this bounded sample (up to 24 small cutouts). Single-image viewing remains available. This does not exclude compatible data elsewhere in the archive."
+}

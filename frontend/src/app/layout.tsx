@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'SPHEREx Sky Explorer',
-  description: 'Practice starter for a NASA Space Apps SPHEREx sky explorer',
+  title: 'SPHEREx | Sky Discovery Lab',
+  description: 'Explore real SPHEREx observations and investigate changes across epochs',
 };
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
