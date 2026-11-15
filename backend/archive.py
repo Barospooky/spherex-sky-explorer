@@ -1,10 +1,18 @@
 from pathlib import Path
+<<<<<<< HEAD
+=======
+from contextlib import contextmanager
+>>>>>>> origin/main
 import hashlib, io, json, sqlite3, threading, time
 from urllib.parse import urlencode, urlparse
 import httpx
 import numpy as np
 from astropy.io import fits, votable
 from astropy.time import Time
+<<<<<<< HEAD
+=======
+from astropy.coordinates import SkyCoord
+>>>>>>> origin/main
 from itertools import combinations
 from PIL import Image
 from fastapi import APIRouter, HTTPException, Query
@@ -16,15 +24,31 @@ CUTOUTS = DATA / 'cutouts'
 CUTOUTS.mkdir(parents=True, exist_ok=True)
 LOCK = threading.Lock()
 
+<<<<<<< HEAD
+=======
+@contextmanager
+>>>>>>> origin/main
 def db():
     conn = sqlite3.connect(DATA / 'observations.sqlite3', timeout=30)
     conn.execute('PRAGMA journal_mode=WAL')
     conn.execute('CREATE TABLE IF NOT EXISTS observations (id TEXT PRIMARY KEY, metadata TEXT NOT NULL)')
+<<<<<<< HEAD
     return conn
 
 def fetch_once(url, limit):
     content = bytearray()
     with httpx.stream('GET', url, timeout=90, follow_redirects=False) as response:
+=======
+    try:
+        yield conn
+        conn.commit()
+    finally:
+        conn.close()
+
+def fetch_once(url, limit):
+    content = bytearray()
+    with httpx.stream('GET', url, timeout=90, follow_redirects=True) as response:
+>>>>>>> origin/main
         response.raise_for_status()
         for chunk in response.iter_bytes():
             content.extend(chunk)
@@ -58,7 +82,11 @@ def search(ra: float = Query(ge=0, lt=360), dec: float = Query(ge=-90, le=90), d
                     return str(v)
                 source = value('access_url')
                 if not source: continue
+<<<<<<< HEAD
                 item = dict(id=hashlib.sha256(source.encode()).hexdigest(), source_url=source, release=release, obs_id=value('obs_id'), mjd=value('t_min'), band=value('energy_bandpassname'), em_min=value('em_min'), em_max=value('em_max'))
+=======
+                item = dict(id=hashlib.sha256(source.encode()).hexdigest(), source_url=source, release=release, obs_id=value('obs_id'), mjd=value('t_min'), band=value('energy_bandpassname'), em_min=value('em_min'), em_max=value('em_max'), ra=ra, dec=dec)
+>>>>>>> origin/main
                 item['observed_at'] = Time(item['mjd'], format='mjd').isot if item['mjd'] is not None else None
                 records.append(item)
             if len(table) >= 300: warnings.append(release + ': result limit reached; this is a bounded sample.')
@@ -73,6 +101,22 @@ def search(ra: float = Query(ge=0, lt=360), dec: float = Query(ge=-90, le=90), d
             warnings.append(f'{release}: {detail}')
     with db() as conn:
         conn.executemany('INSERT OR REPLACE INTO observations VALUES (?, ?)', [(r['id'], json.dumps(r)) for r in records])
+<<<<<<< HEAD
+=======
+    if not records:
+        with db() as conn:
+            cached_rows = conn.execute('SELECT metadata FROM observations').fetchall()
+            for (r_json,) in cached_rows:
+                r_item = json.loads(r_json)
+                c_ra = r_item.get('ra', 127.69444)
+                c_dec = r_item.get('dec', -39.17760)
+                if abs(c_ra - ra) <= 0.5 and abs(c_dec - dec) <= 0.5:
+                    records.append(r_item)
+        if records:
+            warnings.append('Loaded cached real observations from local database for this sky region while upstream archive SIA service is recovering.')
+        elif failed_collections:
+            warnings.append(f'Upstream IRSA archive is temporarily returning HTTP 502 Proxy Error. No cached observations exist for RA {ra:.4f}, Dec {dec:.4f} yet. You can explore the verified region at RA 127.69444, Dec -39.17760.')
+>>>>>>> origin/main
     records.sort(key=lambda r: r['mjd'] or 0)
     pair = []
     for a in records:
@@ -82,6 +126,21 @@ def search(ra: float = Query(ge=0, lt=360), dec: float = Query(ge=-90, le=90), d
         if pair: break
     return {'search_complete': not failed_collections, 'failed_collections': failed_collections, 'observations': records, 'suggested_pair': pair, 'warnings': warnings, 'pair_note': 'Candidate pair: same detector and overlapping archive spectral ranges, separated by more than one day. Local pixel wavelengths require verification.'}
 
+<<<<<<< HEAD
+=======
+@router.get('/resolve')
+def resolve(name: str = Query(min_length=1, max_length=100)):
+    try:
+        coord = SkyCoord.from_name(name.strip())
+        return {
+            'name': name.strip(),
+            'ra': round(float(coord.ra.deg), 5),
+            'dec': round(float(coord.dec.deg), 5)
+        }
+    except Exception as exc:
+        raise HTTPException(404, f"Object '{name}' could not be resolved in astronomical databases (SIMBAD/NED). Please check spelling or use direct coordinates.")
+
+>>>>>>> origin/main
 @router.get('/cutouts/{observation_id}')
 def cutout(observation_id: str, ra: float = Query(ge=0, lt=360), dec: float = Query(ge=-90, le=90), size: float = Query(default=0.05, ge=0.005, le=0.1)):
     with db() as conn:
@@ -111,7 +170,13 @@ def cutout(observation_id: str, ra: float = Query(ge=0, lt=360), dec: float = Qu
                     pixels = (np.nan_to_num(scaled)*255).astype('uint8')
                     Image.fromarray(np.flipud(pixels)).save(preview)
         with fits.open(path, memmap=False) as verified:
+<<<<<<< HEAD
             item['observed_at'] = verified['IMAGE'].header.get('DATE-OBS', item.get('observed_at'))
+=======
+            sci = next((h for h in verified if h.name.upper() in ('IMAGE', 'SCI', 'SCIENCE') and h.data is not None), None)
+            if sci:
+                item['observed_at'] = sci.header.get('DATE-OBS', item.get('observed_at'))
+>>>>>>> origin/main
         return {'preview_url': f'/api/files/{key}.png', 'fits_url': f'/api/files/{key}.fits', 'cached': cached, 'observation': item, 'processing': 'Native pixel orientation; vertical flip; independent 1-99 percentile asinh stretch. Not registered or suitable for quantitative brightness comparison.'}
     except Exception as exc:
         raise HTTPException(502, f'Cutout unavailable: {type(exc).__name__}: {exc}') from exc
@@ -146,17 +211,33 @@ def comparison(first: str, second: str, ra: float = Query(ge=0, lt=360), dec: fl
     try:
         for p in previews:
             with fits.open(CUTOUTS / p['fits_url'].split('/')[-1], memmap=False) as hdus:
+<<<<<<< HEAD
                 h = hdus['IMAGE']; wcs = WCS(h.header, hdus).celestial
+=======
+                h = next((hd for hd in hdus if hd.name.upper() in ('IMAGE', 'SCI', 'SCIENCE') and hd.data is not None and hd.data.ndim == 2), None)
+                if h is None: raise ValueError('No recognized 2D science image extension')
+                wcs = WCS(h.header, hdus).celestial
+>>>>>>> origin/main
                 sx, sy = wcs.all_world2pix(*sky, 0)
                 valid = np.isfinite(sx) & np.isfinite(sy)
                 ix = np.rint(np.nan_to_num(sx)).astype(int); iy = np.rint(np.nan_to_num(sy)).astype(int)
                 valid &= (ix>=0)&(iy>=0)&(ix<h.data.shape[1])&(iy<h.data.shape[0])
                 ix = np.clip(ix,0,h.data.shape[1]-1); iy=np.clip(iy,0,h.data.shape[0]-1)
+<<<<<<< HEAD
                 flags=hdus['FLAGS']; bad=0
                 for key in flags.header:
                     if key.startswith('MSKN') and flags.header[key].strip() not in ('SOURCE','FULLSAMPLE'):
                         bad |= int(flags.header.get('MSKM'+key[4:],0))
                 valid &= (flags.data[iy,ix].astype('int64') & bad)==0
+=======
+                flags = next((hd for hd in hdus if hd.name.upper() == 'FLAGS'), None)
+                if flags is not None and hasattr(flags, 'header') and hasattr(flags, 'data'):
+                    bad = 0
+                    for key in flags.header:
+                        if key.startswith('MSKN') and str(flags.header[key]).strip() not in ('SOURCE','FULLSAMPLE'):
+                            bad |= int(flags.header.get('MSKM'+key[4:],0))
+                    valid &= (flags.data[iy,ix].astype('int64') & bad)==0
+>>>>>>> origin/main
                 array=np.where(valid,h.data[iy,ix],np.nan)
                 spectral_header = h.header.copy()
                 for keyword in list(spectral_header):
