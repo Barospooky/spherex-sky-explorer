@@ -2,18 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'SPHEREx | Sky Discovery Lab',
-  description: 'Explore real SPHEREx observations and investigate changes across epochs',
+  title: 'SPHEREx & Planet X | Sky Discovery Lab',
+  description: 'Explore real infrared observations. Compare epochs. Investigate potential moving objects.',
 };
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
-<<<<<<< HEAD
   return <html lang="en"><body>{children}</body></html>;
-=======
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
-    </html>
-  );
->>>>>>> origin/main
 }

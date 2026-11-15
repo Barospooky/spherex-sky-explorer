@@ -1,24 +1,12 @@
-<<<<<<< HEAD
-# SPHEREx Sky Explorer — practice starter
-
-Next.js App Router, TypeScript, Tailwind CSS and FastAPI. NASA Space Apps Challenge 2026 preparation; not an official submission.
-
-## Start backend — PowerShell terminal 1
-```powershell
-Set-Location D:\NASA_SPACE_APPS\spherex-sky-explorer\backend
-# Only if the environment is missing:
-py -3.13 -m venv .venv
-=======
 # SPHEREx Sky Explorer â€” practice starter
 
 Next.js App Router, TypeScript, Tailwind CSS and FastAPI. NASA Space Apps Challenge 2026 preparation; not an official submission.
 
 ## Start backend â€” PowerShell terminal 1
 ```powershell
-Set-Location backend
+Set-Location D:\NASA_SPACE_APPS\spherex-sky-explorer\backend
 # Only if the environment is missing:
-py -m venv .venv
->>>>>>> origin/main
+py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe --version
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt --retries 5 --timeout 60
 .\.venv\Scripts\python.exe -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
@@ -26,15 +14,9 @@ py -m venv .venv
 Health: http://127.0.0.1:8000/api/health
 API documentation: http://127.0.0.1:8000/docs
 
-<<<<<<< HEAD
-## Start frontend — PowerShell terminal 2
-```powershell
-Set-Location D:\NASA_SPACE_APPS\spherex-sky-explorer\frontend
-=======
 ## Start frontend â€” PowerShell terminal 2
 ```powershell
-Set-Location frontend
->>>>>>> origin/main
+Set-Location D:\NASA_SPACE_APPS\spherex-sky-explorer\frontend
 if (!(Test-Path .env.local)) { Copy-Item .env.local.example .env.local }
 npm install
 npm run dev
@@ -44,11 +26,7 @@ Open http://localhost:3000. Reuse the existing project server if it is already r
 ## Verify
 ```powershell
 Invoke-RestMethod http://127.0.0.1:8000/api/health
-<<<<<<< HEAD
 Set-Location D:\NASA_SPACE_APPS\spherex-sky-explorer\frontend
-=======
-Set-Location frontend
->>>>>>> origin/main
 npm run build
 ```
 The dashboard checks NEXT_PUBLIC_API_URL + /api/health with a ten-second timeout. Connected requires HTTP success and the expected status and project fields. Retry with Test backend connection.
