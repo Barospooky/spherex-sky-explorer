@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js Build Outputs
+.next/
+out/
+build/
+dist/
+
+# Python Virtual Environments & Bytecode
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Environment Variables & Secrets (Keep .example files)
+.env
+.env*.local
+!.env.local.example
+
+# Large Data & Local Cache (Avoid pushing heavy FITS/SQLite files to GitHub)
+backend/data/
+*.fits
+*.sqlite3
+
+# Test artifacts & Temporary files
+artifacts/chrome*/
+
+# Operating System & Editor Metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.log

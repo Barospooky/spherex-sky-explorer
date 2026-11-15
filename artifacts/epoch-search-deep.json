@@ -1,0 +1,85 @@
+{
+  "comparison": null,
+  "attempts": [
+    {
+      "first": "2025W17_4B_0021_1",
+      "second": "2025W18_1B_0054_4",
+      "reason": "Comparison rejected: Clean overlap: 833/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W17_4B_0021_1",
+      "second": "2025W18_1B_0397_4",
+      "reason": "Comparison rejected: Clean overlap: 854/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W17_4B_0021_1",
+      "second": "2025W18_2B_0159_3",
+      "reason": "Comparison rejected: Clean overlap: 797/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W17_4B_0021_1",
+      "second": "2026W30_1B_0497_4",
+      "reason": "Comparison rejected: Clean overlap: 749/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W17_4B_0021_1",
+      "second": "2026W30_2A_0392_4",
+      "reason": "Comparison rejected: Clean overlap: 738/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_1B_0054_4",
+      "second": "2025W18_1B_0397_4",
+      "reason": "Comparison rejected: Clean overlap: 844/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_1B_0054_4",
+      "second": "2025W18_2B_0159_3",
+      "reason": "Comparison rejected: Clean overlap: 795/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_1B_0054_4",
+      "second": "2026W30_1B_0497_4",
+      "reason": "Comparison rejected: Clean overlap: 744/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_1B_0054_4",
+      "second": "2026W30_2A_0392_4",
+      "reason": "Comparison rejected: Clean overlap: 730/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_1B_0397_4",
+      "second": "2025W18_2B_0159_3",
+      "reason": "Comparison rejected: Clean overlap: 810/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_1B_0397_4",
+      "second": "2026W30_1B_0497_4",
+      "reason": "Comparison rejected: Clean overlap: 757/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_1B_0397_4",
+      "second": "2026W30_2A_0392_4",
+      "reason": "Comparison rejected: Clean overlap: 746/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_2B_0159_3",
+      "second": "2026W30_1B_0497_4",
+      "reason": "Comparison rejected: Clean overlap: 716/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_2B_0159_3",
+      "second": "2026W30_2A_0392_4",
+      "reason": "Comparison rejected: Clean overlap: 708/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2026W30_1B_0497_4",
+      "second": "2026W30_2A_0392_4",
+      "reason": "Comparison rejected: Clean overlap: 743/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    }
+  ],
+  "warnings": [
+    "dr1_deep: result limit reached; this is a bounded sample.",
+    "qr3_deep: result limit reached; this is a bounded sample."
+  ],
+  "message": "No compatible pair in the bounded six-observation sample. Try another region or enable deep fields; this is not evidence that no compatible archive data exist."
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "error": "422: Comparison rejected: Clean overlap: 829/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+  },
+  {
+    "error": "422: Comparison rejected: Clean overlap: 811/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+  }
+]

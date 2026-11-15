@@ -1,0 +1,129 @@
+{
+  "comparison": {
+    "frames": [
+      {
+        "preview_url": "/api/files/7c3e42750d94c730d529f51cd1b74dd44321f7b10b2d4f4d8dc8bbf30d28322c.png",
+        "fits_url": "/api/files/6d2e93bff9a6533ba67329ecc99fcf94bf74d009670f858c85f5e366b10d4e8c.fits",
+        "cached": true,
+        "observation": {
+          "id": "d3033a9c6f8f8c5c1d95806080ef722af1e8eb28d120f9ece43e29ff34bb36e8",
+          "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W45_2A/l2b-v27-2026-247/5/level2_2025W45_2A_0496_2D5_spx_l2b-v27-2026-247.fits",
+          "release": "dr1",
+          "obs_id": "2025W45_2A_0496_2",
+          "mjd": 60987.79686,
+          "band": "SPHEREx-D5",
+          "em_min": 3.8113e-06,
+          "em_max": 4.43e-06,
+          "observed_at": "2025-11-08T19:07:28.704"
+        },
+        "processing": "Native pixel orientation; vertical flip; independent 1-99 percentile asinh stretch. Not registered or suitable for quantitative brightness comparison."
+      },
+      {
+        "preview_url": "/api/files/499041a95353a7895f8550f6de0e52b9c27c7d7880b002c0c3e408dc38f27fff.png",
+        "fits_url": "/api/files/468678b0ef8dea3d82c42793dbb4c7cec17e3f26e7b3e8d490e11c5949990308.fits",
+        "cached": true,
+        "observation": {
+          "id": "5e34f9a7c38874ef47316920c6c96d895f1e62a3524ca9213f52dc3a2901d7af",
+          "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W46_2A/l2b-v27-2026-207/5/level2_2025W46_2A_0302_2D5_spx_l2b-v27-2026-207.fits",
+          "release": "dr1",
+          "obs_id": "2025W46_2A_0302_2",
+          "mjd": 60993.977852,
+          "band": "SPHEREx-D5",
+          "em_min": 3.8113e-06,
+          "em_max": 4.43e-06,
+          "observed_at": "2025-11-14T23:28:06.413"
+        },
+        "processing": "Native pixel orientation; vertical flip; independent 1-99 percentile asinh stretch. Not registered or suitable for quantitative brightness comparison."
+      }
+    ],
+    "valid_pixels": 824,
+    "processing": "ICRS TAN, north up/east left; 3 arcmin, 32x32; nearest-neighbor WCS resampling; quality masks; local wavelength centers within half the narrower bandwidth; common percentile/asinh stretch. Not PSF matched; not calibrated difference photometry.",
+    "wcs": {
+      "WCSAXES": 2,
+      "CRPIX1": 16.5,
+      "CRPIX2": 16.5,
+      "CDELT1": -0.0015625,
+      "CDELT2": 0.0015625,
+      "CUNIT1": "deg",
+      "CUNIT2": "deg",
+      "CTYPE1": "RA---TAN",
+      "CTYPE2": "DEC--TAN",
+      "CRVAL1": 127.69444,
+      "CRVAL2": -39.1776,
+      "LONPOLE": 180.0,
+      "LATPOLE": -39.1776,
+      "MJDREF": 0.0,
+      "RADESYS": "ICRS"
+    }
+  },
+  "attempts": [
+    {
+      "first": "2025W17_4B_0149_1",
+      "second": "2025W18_2B_0379_4",
+      "reason": "Comparison rejected: Clean overlap: 832/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W17_4B_0149_1",
+      "second": "2025W20_2D_0192_3",
+      "reason": "Comparison rejected: Clean overlap: 773/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W17_4B_0149_1",
+      "second": "2025W45_2A_0496_2",
+      "reason": "Comparison rejected: Clean overlap: 809/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W17_4B_0149_1",
+      "second": "2025W46_2A_0105_3",
+      "reason": "Comparison rejected: Clean overlap: 816/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W17_4B_0149_1",
+      "second": "2025W46_2A_0302_2",
+      "reason": "Comparison rejected: Clean overlap: 835/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_2B_0379_4",
+      "second": "2025W20_2D_0192_3",
+      "reason": "Comparison rejected: Clean overlap: 769/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_2B_0379_4",
+      "second": "2025W45_2A_0496_2",
+      "reason": "Comparison rejected: Clean overlap: 807/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_2B_0379_4",
+      "second": "2025W46_2A_0105_3",
+      "reason": "Comparison rejected: Clean overlap: 818/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W18_2B_0379_4",
+      "second": "2025W46_2A_0302_2",
+      "reason": "Comparison rejected: Clean overlap: 833/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W20_2D_0192_3",
+      "second": "2025W45_2A_0496_2",
+      "reason": "Comparison rejected: Clean overlap: 760/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W20_2D_0192_3",
+      "second": "2025W46_2A_0105_3",
+      "reason": "Comparison rejected: Clean overlap: 775/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W20_2D_0192_3",
+      "second": "2025W46_2A_0302_2",
+      "reason": "Comparison rejected: Clean overlap: 780/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    },
+    {
+      "first": "2025W45_2A_0496_2",
+      "second": "2025W46_2A_0105_3",
+      "reason": "Comparison rejected: Clean overlap: 817/1024; wavelength-compatible: 0/1024; shared accepted: 0/1024 (minimum 16). Try a different region or deep-field collection."
+    }
+  ],
+  "warnings": [
+    "dr1: result limit reached; this is a bounded sample."
+  ]
+}
